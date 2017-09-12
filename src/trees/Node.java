@@ -10,4 +10,15 @@ class Node {
 		left = null;
 		right = null;
 	}
+
+	@Override
+	public String toString() {
+		return "Node [key=" + key + "]";
+	}
+	
+	
+	
+	
+	
+	
 }

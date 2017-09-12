@@ -7,6 +7,7 @@ public class BinarySearchTree {
 	public BinarySearchTree() {
 		this.root = null;
 	}
+
 	void printInorder() {
 		System.out.println("\nPrinting in-order");
 		printInorder(this.root);
@@ -24,30 +25,35 @@ public class BinarySearchTree {
 	void insertNode(int key) {
 		root = insertNode(root, key);
 	}
-	
-	 /* A recursive function to insert a new key in BST */
-    private Node insertNode(Node root, int key) {
- 
-        /* If the tree is empty, return a new node */
-        if (root == null) {
-            root = new Node(key);
-            return root;
-        }
- 
-        /* Otherwise, recur down the tree */
-        if (key < root.key)
-            root.left = insertNode(root.left, key);
-        else if (key > root.key)
-            root.right = insertNode(root.right, key);
- 
-        /* return the (unchanged) node pointer */
-        return root;
-    }
 
-	// A utility function to search a given key in BST
-	public Node search(Node root, int key) {
+	/* A recursive function to insert a new key in BST */
+	private Node insertNode(Node root, int key) {
+
+		/* If the tree is empty, return a new node */
+		if (root == null) {
+			root = new Node(key);
+			return root;
+		}
+
+		/* Otherwise, recur down the tree */
+		if (key < root.key)
+			root.left = insertNode(root.left, key);
+		else if (key > root.key)
+			root.right = insertNode(root.right, key);
+
+		/* return the (unchanged) node pointer */
+		return root;
+	}
+
+	public Node search(int key) {
+		return search(this.root, key);
+	}
+
+	private Node search(Node root, int key) {
 		// Base Cases: root is null or key is present at root
-		if (root == null || root.key == key)
+		if (root == null)
+			return null;
+		if (root.key == key)
 			return root;
 
 		// val is greater than root's key

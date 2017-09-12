@@ -11,6 +11,8 @@ public class BSTTraversal {
 		tree.insertNode(2);
 
 		tree.printInorder();
+
+		System.out.println("\nSearching element: " + tree.search(5) );
 	}
 
 }
