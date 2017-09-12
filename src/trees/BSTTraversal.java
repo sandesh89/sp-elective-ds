@@ -12,7 +12,17 @@ public class BSTTraversal {
 
 		tree.printInorder();
 
-		System.out.println("\nSearching element: " + tree.search(5) );
+		int key = 5;
+		System.out.println("\nSearching element: "+ key + " " + tree.search(key) );
+		
+		
+		tree.deleteKey(key);
+		
+		System.out.println("\nSearching element: "+ key + " " + tree.search(key) );
+		
+		tree.insertNode(key);
+		
+		System.out.println("\nSearching element: "+ key + " " + tree.search(key) );
 	}
 
 }
