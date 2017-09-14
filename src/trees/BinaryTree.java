@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Stack;
 
-public class BinaryTree {
+public class BinaryTree implements Tree{
 
 	Node root;
 
@@ -12,22 +12,26 @@ public class BinaryTree {
 		root = null;
 	}
 
-	void printInorder() {
+	@Override
+	public void printInorder() {
 		System.out.println("\nPrinting in-order");
 		printInorder(this.root);
 	}
 
-	void printPreorder() {
+	@Override
+	public void printPreorder() {
 		System.out.println("\nPrinting pre-order");
 		printPreorder(this.root);
 	}
-
-	void printPostorder() {
+	
+	@Override
+	public void printPostorder() {
 		System.out.println("\nPrinting post-order");
 		printPostorder(this.root);
 	}
 
-	void printLevelOrder() {
+	@Override
+	public void printLevelOrder() {
 		System.out.println("\nBFS traversal ");
 		Queue<Node> queue = new LinkedList<Node>();
 		queue.add(this.root);
@@ -47,7 +51,8 @@ public class BinaryTree {
 		}
 	}
 
-	void printInorderWithoutRecursion() {
+	@Override
+	public void printInorderWithoutRecursion() {
 		System.out.println("\nInorder traversal using Stack");
 		if (this.root == null) {
 			return;
@@ -80,6 +85,24 @@ public class BinaryTree {
 		}
 	}
 
+	@Override
+	public void insertNode(int key) {
+		// TODO Implementation to be added later
+		
+	}
+
+	@Override
+	public Node search(int key) {
+		// TODO Implementation to be added later
+		return null;
+	}
+
+	@Override
+	public void deleteKey(int key) {
+		// TODO Implementation to be added later
+		
+	}
+	
 	/* Private methods internal to this class only */
 
 	private void printInorder(Node rootNode) {
@@ -108,5 +131,7 @@ public class BinaryTree {
 		printPostorder(rootNode.right);
 		System.out.print(rootNode.key + " ");
 	}
+
+
 
 }

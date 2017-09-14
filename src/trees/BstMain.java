@@ -1,6 +1,6 @@
 package trees;
 
-public class BSTTraversal {
+public class BstMain {
 
 	public static void main(String[] args) {
 		BinarySearchTree tree = new BinarySearchTree();

@@ -1,6 +1,6 @@
 package trees;
 
-public class BinarySearchTree {
+public class BinarySearchTree implements Tree {
 
 	Node root;
 
@@ -8,7 +8,8 @@ public class BinarySearchTree {
 		this.root = null;
 	}
 
-	void printInorder() {
+	@Override
+	public void printInorder() {
 		System.out.println("\nPrinting in-order");
 		printInorder(this.root);
 	}
@@ -22,8 +23,19 @@ public class BinarySearchTree {
 		printInorder(rootNode.right);
 	}
 
-	void insertNode(int key) {
+	@Override
+	public void insertNode(int key) {
 		root = insertNode(root, key);
+	}
+	
+	@Override
+	public Node search(int key) {
+		return search(this.root, key);
+	}
+	
+	@Override
+	public void deleteKey(int key) {
+		root = deleteNode(root, key);
 	}
 
 	/* A recursive function to insert a new key in BST */
@@ -45,10 +57,6 @@ public class BinarySearchTree {
 		return root;
 	}
 
-	public Node search(int key) {
-		return search(this.root, key);
-	}
-
 	private Node search(Node root, int key) {
 		// Base Cases: root is null or key is present at root
 		if (root == null)
@@ -63,10 +71,6 @@ public class BinarySearchTree {
 		// val is less than root's key
 		return search(root.right, key);
 
-	}
-
-	void deleteKey(int key) {
-		root = deleteNode(root, key);
 	}
 
 	/* A recursive function to insert a new key in BST */
@@ -108,5 +112,30 @@ public class BinarySearchTree {
 			root = root.left;
 		}
 		return minv;
+	}
+
+	@Override
+	public void printInorderWithoutRecursion() {
+		// TODO Same body as Binary Tree implementation
+		
+	}
+
+	@Override
+	public void printPreorder() {
+		// TODO Same body as Binary Tree implementation
+		
+	}
+
+	@Override
+	public void printPostorder() {
+		// TODO Same body as Binary Tree implementation
+		
+	}
+
+	@Override
+	public void printLevelOrder() {
+		// TODO Same body as Binary Tree implementation
+		
+		
 	}
 }

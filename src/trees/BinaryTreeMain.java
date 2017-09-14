@@ -1,6 +1,6 @@
 package trees;
 
-public class BinaryTreeTraversal {
+public class BinaryTreeMain {
 
 	static void initializeTree(BinaryTree tree) {
 
