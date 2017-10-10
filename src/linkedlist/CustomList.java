@@ -1,10 +1,8 @@
 package linkedlist;
 
-public interface List {
+public interface CustomList {
 
 	int size();
-
-	boolean isEmpty();
 
 	boolean contains(Object o);
 
@@ -12,15 +10,13 @@ public interface List {
 
 	boolean addFirst(Page page);
 
-	void addLast(Page page);
+	boolean addLast(Page page);
 
-	boolean remove(Page page);
+	boolean remove();
 
-	Page removeFirst();
+	boolean removeFirst();
 
-	Page removeLast();
-
-	boolean get(Page page);
+	boolean removeLast();
 
 	Page getFirst();
 
