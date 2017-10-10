@@ -24,6 +24,15 @@ public class Page {
 	public void setFooter(String footer) {
 		this.footer = footer;
 	}
+	public Page(String url, String name, String header, String footer) {
+		super();
+		this.url = url;
+		this.name = name;
+		this.header = header;
+		this.footer = footer;
+	}
+	
+	
 	
 	
 	

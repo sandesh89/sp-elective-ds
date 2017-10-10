@@ -90,9 +90,9 @@ public class CustomLinkedList implements CustomList {
 	}
 
 	private Page unlinkLast(Node l) {
-        final Page page = l.page
+        final Page page = l.page;
         final Node prev = l.prev;
-        l.page = null
+        l.page = null;
         l.prev = null; // why?
         last = prev;
         if (prev == null)
@@ -116,7 +116,7 @@ public class CustomLinkedList implements CustomList {
 	public Page getLast() {
 		
 		final Node l = last;
-		if(l)!=null){
+		if(l!=null){
 			return l.page;
 		}
 		
